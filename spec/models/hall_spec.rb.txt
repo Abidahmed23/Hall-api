@@ -1,0 +1,43 @@
+require 'rails_helper'
+
+RSpec.describe Hall, type: :model do
+
+  	before :each do
+		@halld = Hall.new
+	end
+
+	it "is valid with valid arrtributes" do
+	  	@halld.total_seat = "something"
+	  	@halld.availible = "something"
+	  	@halld.seat = "something"
+	  	@halld.new_reculted_list = "something"
+	  	@halld.border_info = "something"
+	  	expect(@halld).to be_valid
+  	end
+
+  	it "is invalid without a total_seat" do
+  	@halld.total_seat = nil
+  	expect(@halld).to_not be_valid
+  end
+
+  it "is invalid without a availible" do
+  	@halld.availible = nil
+  	expect(@halld).to_not be_valid
+  end
+
+  it "is invalid without a seat" do
+  	@halld.seat = nil
+  	expect(@halld).to_not be_valid
+  end
+
+  it "is invalid without a new_reculted_list" do
+  	@halld.new_reculted_list = nil
+  	expect(@halld).to_not be_valid
+  end
+
+ it "is invalid without a border_info" do
+  	@halld.border_info = nil
+  	expect(@halld).to_not be_valid
+  end
+
+end
